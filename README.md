@@ -4,3 +4,9 @@
 
 <h1 align=center>matija-utils</h1>
 <p align=center>My opinionated list of JavaScript utilities.</p>
+
+Install with [npm](https://www.npmjs.com/)
+
+```sh
+$ npm i matija-utils
+```
