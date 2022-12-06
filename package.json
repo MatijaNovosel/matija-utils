@@ -1,0 +1,35 @@
+{
+  "name": "matija-utils",
+  "version": "1.0.0",
+  "description": "My opinionated list of JavaScript utilities.",
+  "main": "dist/matija-utils.cjs.js",
+  "module": "dist/matija-utils.esm.js",
+  "browser": "dist/matija-utils.umd.js",
+  "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatijaNovosel/matija-utils.git"
+  },
+  "keywords": [],
+  "author": "Matija Novosel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatijaNovosel/matija-utils/issues"
+  },
+  "homepage": "https://github.com/MatijaNovosel/matija-utils#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
+}
