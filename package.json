@@ -2,6 +2,7 @@
   "name": "matija-utils",
   "version": "1.0.1",
   "description": "My opinionated list of JavaScript utilities.",
+  "type": "module",
   "main": "dist/matija-utils.cjs.js",
   "module": "dist/matija-utils.esm.js",
   "browser": "dist/matija-utils.umd.js",
