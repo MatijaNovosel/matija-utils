@@ -1,22 +1,22 @@
-export const intersect = (a, b) => {
+export const intersect = (a: number[], b: number[]) => {
   const setB = new Set(b);
   return [...new Set(a)].filter((x) => setB.has(x));
 };
 
-export const chunk = (arr, chunkSize) => {
+export const chunk = (arr: number[], chunkSize: number) => {
   const result = [];
   for (let i = 0, len = arr.length; i < len; i += chunkSize)
     result.push(arr.slice(i, i + chunkSize));
   return result;
 };
 
-export const range = (start, end) => {
+export const range = (start: number, end: number) => {
   return Array(end - start + 1)
-    .fill()
+    .fill(0)
     .map((_, idx) => start + idx);
 };
 
-export const splitByValue = (arr, val) => {
+export const splitByValue = (arr: number[], val: number) => {
   const result = [[]];
   for (let i = 0; i < arr.length; i++)
     if (arr[i] == val) result.push([]);
@@ -24,4 +24,4 @@ export const splitByValue = (arr, val) => {
   return result;
 };
 
-export const sum = (...args) => args.reduce((a, b) => a + b);
+export const sum = (...args: number[]) => args.reduce((a, b) => a + b);
