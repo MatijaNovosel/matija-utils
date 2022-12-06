@@ -8,13 +8,17 @@
   "browser": "dist/matija-utils.umd.js",
   "scripts": {
     "build": "rollup -c",
+    "test": "npm run build",
     "pretest": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MatijaNovosel/matija-utils.git"
   },
-  "keywords": [],
+  "keywords": [
+    "utils",
+    "javascript"
+  ],
   "author": "Matija Novosel",
   "license": "ISC",
   "bugs": {
