@@ -1,5 +1,5 @@
 {
-  "name": "@MatijaNovosel/matija-utils",
+  "name": "matija-utils",
   "version": "1.0.0",
   "description": "My opinionated list of JavaScript utilities.",
   "main": "dist/matija-utils.cjs.js",
@@ -7,7 +7,6 @@
   "browser": "dist/matija-utils.umd.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "exit 0",
     "pretest": "npm run build"
   },
   "repository": {
@@ -28,9 +27,6 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
-  },
-  "publishConfig": {
-    "@matijanovosel:registry": "https://npm.pkg.github.com"
   },
   "files": [
     "dist",

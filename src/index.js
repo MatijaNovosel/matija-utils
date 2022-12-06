@@ -9,3 +9,19 @@ export const chunk = (arr, chunkSize) => {
     result.push(arr.slice(i, i + chunkSize));
   return result;
 };
+
+export const range = (start, end) => {
+  return Array(end - start + 1)
+    .fill()
+    .map((_, idx) => start + idx);
+};
+
+export const splitByValue = (arr, val) => {
+  const result = [[]];
+  for (let i = 0; i < arr.length; i++)
+    if (arr[i] == val) result.push([]);
+    else result[result.length - 1].push(arr[i]);
+  return result;
+};
+
+export const sum = (...args) => args.reduce((a, b) => a + b);
