@@ -1,6 +1,6 @@
 {
   "name": "matija-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "My opinionated list of JavaScript utilities.",
   "type": "module",
   "main": "dist/matija-utils.cjs.js",
