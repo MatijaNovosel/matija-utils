@@ -25,3 +25,5 @@ export const splitByValue = (arr: any[], val: any) => {
 };
 
 export const sum = (...args: number[]) => args.reduce((a, b) => a + b);
+
+export const mod = (a: number, b: number) => ((a % b) + b) % b;
