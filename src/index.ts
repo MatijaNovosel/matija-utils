@@ -91,10 +91,21 @@ export const groupBy = <T>(array: T[], property: string): IDictionary<T[]> => {
 };
 
 /**
- * Repeats a function a set amount of times
+ * Repeats a function a set amount of times.
  * @param {number} n
  * @param {function} fn
  */
 export const repeat = (n: number, fn: () => void): void => {
   Array(n).forEach(() => fn());
+};
+
+/**
+ * Creates an array of a certain length filled with a specified value.
+ * @param {number} length
+ * @param {any} value
+ */
+export const generateArray = (length: number, value: any): any[] => {
+  return Array(length)
+    .fill(undefined)
+    .map(() => value);
 };
