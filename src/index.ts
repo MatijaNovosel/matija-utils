@@ -99,11 +99,21 @@ export const repeat = (n: number, fn: () => void): void => {
   Array(n).forEach(() => fn());
 };
 
+export const cloneObject = (obj: any) => {
+  var clone = {};
+  for (var i in obj) {
+    if (obj[i] != null && typeof obj[i] == "object")
+      clone[i] = cloneObject(obj[i]);
+    else clone[i] = obj[i];
+  }
+  return clone;
+};
+
 /**
  * Creates an array of a certain length filled with a specified value.
  * @param {number} length
  * @param {any} value
  */
 export const generateArray = (length: number, value: any): any[] => {
-  return structuredClone(Array.from({ length }, () => value));
+  return JSON.parse(JSON.stringify(Array.from({ length }, () => value)));
 };
