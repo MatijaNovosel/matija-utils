@@ -89,3 +89,12 @@ export const groupBy = <T>(array: T[], property: string): IDictionary<T[]> => {
     return memo;
   }, {});
 };
+
+/**
+ * Repeats a function a set amount of times
+ * @param {number} n
+ * @param {function} fn
+ */
+export const repeat = (n: number, fn: () => void): void => {
+  Array(n).forEach(() => fn());
+};
