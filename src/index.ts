@@ -105,7 +105,5 @@ export const repeat = (n: number, fn: () => void): void => {
  * @param {any} value
  */
 export const generateArray = (length: number, value: any): any[] => {
-  return Array(length)
-    .fill(undefined)
-    .map(() => value);
+  return Array.from({ length }, () => value);
 };
