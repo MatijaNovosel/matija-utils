@@ -1,6 +1,6 @@
 {
   "name": "matija-utils",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "My opinionated list of JavaScript utilities.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
