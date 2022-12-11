@@ -96,7 +96,9 @@ export const groupBy = <T>(array: T[], property: string): IDictionary<T[]> => {
  * @param {function} fn
  */
 export const repeat = (n: number, fn: () => void): void => {
-  Array(n).forEach(() => fn());
+  Array(n)
+    .fill(undefined)
+    .forEach(() => fn());
 };
 
 export const cloneObject = (obj: any) => {
