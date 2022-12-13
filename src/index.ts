@@ -8,10 +8,8 @@ import { IDictionary } from "./models";
  * const x = intersect([1, 2, 3], [1, 2]);
  * console.log(x); // [1, 2]
  */
-export const intersect = (a: any[], b: any[]) => {
-  const setB = new Set(b);
-  return [...new Set(a)].filter((x) => setB.has(x));
-};
+export const intersect = (a: any[], b: any[]) =>
+  [...new Set(a)].filter((x) => new Set(b).has(x));
 
 /**
  * Chunks an array into a new array consisting of smaller arrays of a specified size.
@@ -101,6 +99,10 @@ export const repeat = (n: number, fn: () => void): void => {
     .forEach(() => fn());
 };
 
+/**
+ * Makes a deep clone of an object.
+ * @param {any} obj
+ */
 export const cloneObject = (obj: any) => {
   var clone = {};
   for (var i in obj) {
@@ -119,3 +121,10 @@ export const cloneObject = (obj: any) => {
 export const generateArray = (length: number, value: any): any[] => {
   return JSON.parse(JSON.stringify(Array.from({ length }, () => value)));
 };
+
+/**
+ * Returns the last N elements of an array.
+ * @param {any[]} arr
+ * @param {number} n
+ */
+export const end = (arr: any[], n: number) => arr.slice(arr.length - n);
