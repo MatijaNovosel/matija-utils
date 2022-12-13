@@ -179,12 +179,20 @@ export const randInt = (min: number, max: number) => {
 };
 
 /**
+ * Gets a random element of an array.
+ * @param {any[]} arr
+ */
+export const sample = (arr: any[]): any => {
+  return arr[randInt(0, arr.length)];
+};
+
+/**
  * Generates a string composed of N random characters.
  * @param {number} n
  */
-export const generateRandomString = (n: number) => {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+export const generateRandomString = (n: number): string => {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
   let res = "";
-  while (n--) res += letters[randInt(0, letters.length)];
+  while (n--) res += sample(characters.split(""));
   return res;
 };
