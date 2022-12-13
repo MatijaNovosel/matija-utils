@@ -128,3 +128,52 @@ export const generateArray = (length: number, value: any): any[] => {
  * @param {number} n
  */
 export const end = (arr: any[], n: number) => arr.slice(arr.length - n);
+
+/**
+ * Returns the month of a provided date in the long format.
+ * @param {Date | null} date
+ */
+export const getMonth = (date: Date | null) => {
+  if (date) return date.toLocaleString("en", { month: "long" });
+  return new Date().toLocaleString("en", { month: "long" });
+};
+
+/**
+ * Calculates the difference in months between two dates.
+ * @param {Date} from
+ * @param {Date} to
+ */
+export const monthDiff = (from: Date, to: Date) => {
+  return (
+    to.getMonth() -
+    from.getMonth() +
+    12 * (to.getFullYear() - from.getFullYear())
+  );
+};
+
+/**
+ * Creates a string that describes the difference between two dates.
+ * @param {Date} from
+ * @param {Date} to
+ */
+export const dateDiffReadable = (from: Date, to: Date): string => {
+  const monthDifference = monthDiff(from, to);
+  const years = Math.floor(monthDifference / 12);
+  const months = monthDifference % 12;
+  return `${years > 0 ? `${years} year${years > 1 ? "s" : ""}` : ""}${
+    months > 0
+      ? `${years > 0 ? " " : ""}${months} month${months > 1 ? "s" : ""}`
+      : ""
+  }`;
+};
+
+/**
+ * Gets a random integer between an inclusive range.
+ * @param {number} min
+ * @param {number} max
+ */
+export const randInt = (min: number, max: number) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
