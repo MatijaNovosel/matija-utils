@@ -183,7 +183,7 @@ export const randInt = (min: number, max: number) => {
  * @param {any[]} arr
  */
 export const sample = (arr: any[]): any => {
-  return arr[randInt(0, arr.length)];
+  return arr[randInt(0, arr.length - 1)];
 };
 
 /**
