@@ -177,3 +177,14 @@ export const randInt = (min: number, max: number) => {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+/**
+ * Generates a string composed of N random characters.
+ * @param {number} n
+ */
+export const generateRandomString = (n: number) => {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let res = "";
+  while (n--) res += letters[randInt(0, letters.length)];
+  return res;
+};
