@@ -196,3 +196,17 @@ export const generateRandomString = (n: number): string => {
   while (n--) res += sample(characters.split(""));
   return res;
 };
+
+/**
+ * Combines two arrays into one, similar to the Python zip function.
+ * @see https://docs.python.org/3.3/library/functions.html#zip
+ * @param {any[]} a
+ * @param {any[]} b
+ */
+export const zip = (a: any[], b: any[]): any[][] => {
+  const res = [];
+  a.forEach((e, i) => {
+    if (b[i]) res.push([e, b[i]]);
+  });
+  return res;
+};
