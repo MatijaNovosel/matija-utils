@@ -127,7 +127,11 @@ export const generateArray = (length: number, value: any): any[] => {
  * @param {any[]} arr
  * @param {number} n
  */
-export const end = (arr: any[], n: number) => arr.slice(arr.length - n);
+export const end = (arr: any[], n: number) => {
+  const slice = arr.slice(arr.length - n);
+  if (n === 1) return slice[0];
+  return slice;
+};
 
 /**
  * Returns the month of a provided date in the long format.
