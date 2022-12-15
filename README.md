@@ -24,7 +24,7 @@ $ npm i matija-utils
 | groupBy       | Groups values in an array of objects by the provided property.                                        |
 | repeat        | Repeats a function a set amount of times.                                                             |
 | generateArray | Creates an array of a certain length filled with a specified value.                                   |
-| end           | Returns the last `N` elements of an array.                                                            |
+| end           | Returns the last `N` elements of an array. If 1 is specified, it returns only the last element.       |
 | sample        | Gets a random element of an array.                                                                    |
 | zip           | Combines two arrays into one, similar to the Python `zip` function.                                   |
 | difference    | Gets an array that contains the elements that are present in the array `a`, but not in the array `b`. |

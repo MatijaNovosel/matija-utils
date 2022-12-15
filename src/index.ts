@@ -123,11 +123,11 @@ export const generateArray = (length: number, value: any): any[] => {
 };
 
 /**
- * Returns the last `N` elements of an array.
+ * Returns the last `N` elements of an array. If 1 is specified, it returns only the last element.
  * @param {any[]} arr
  * @param {number} n
  */
-export const end = (arr: any[], n: number) => {
+export const end = (arr: any[], n: number): any | any[] => {
   const slice = arr.slice(arr.length - n);
   if (n === 1) return slice[0];
   return slice;
