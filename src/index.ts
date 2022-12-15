@@ -123,7 +123,7 @@ export const generateArray = (length: number, value: any): any[] => {
 };
 
 /**
- * Returns the last N elements of an array.
+ * Returns the last `N` elements of an array.
  * @param {any[]} arr
  * @param {number} n
  */
@@ -187,7 +187,7 @@ export const sample = (arr: any[]): any => {
 };
 
 /**
- * Generates a string composed of N random characters.
+ * Generates a string composed of `N` random characters.
  * @param {number} n
  */
 export const generateRandomString = (n: number): string => {
@@ -198,7 +198,7 @@ export const generateRandomString = (n: number): string => {
 };
 
 /**
- * Combines two arrays into one, similar to the Python zip function.
+ * Combines two arrays into one, similar to the Python `zip` function.
  * @see https://docs.python.org/3.3/library/functions.html#zip
  * @param {any[]} a
  * @param {any[]} b
@@ -210,3 +210,11 @@ export const zip = (a: any[], b: any[]): any[][] => {
   });
   return res;
 };
+
+/**
+ * Gets an array that contains the elements that are present in the array `a`, but not in the array `b`.
+ * @param {any[]} a
+ * @param {any[]} b
+ */
+export const difference = (a: any[], b: any[]): any[] =>
+  [...a].filter((x) => [...b].indexOf(x) < 0);
