@@ -5,8 +5,7 @@ import { IDictionary } from "./models";
  * @param {any[]} a
  * @param {any[]} b
  * @example
- * const x = intersect([1, 2, 3], [1, 2]);
- * console.log(x); // [1, 2]
+ * intersect([1, 2, 3], [1, 2]); // [1, 2]
  */
 export const intersect = (a: any[], b: any[]) =>
   [...new Set(a)].filter((x) => new Set(b).has(x));
@@ -16,8 +15,7 @@ export const intersect = (a: any[], b: any[]) =>
  * @param {any[]} arr
  * @param {number} chunkSize
  * @example
- * const x = chunk([1, 2, 3, 4, 5, 6], 2);
- * console.log(x); // [[1, 2], [3, 4], [5, 6]]
+ * chunk([1, 2, 3, 4, 5, 6], 2); // [[1, 2], [3, 4], [5, 6]]
  */
 export const chunk = (arr: any[], chunkSize: number): any[][] => {
   const result = [];
@@ -30,6 +28,8 @@ export const chunk = (arr: any[], chunkSize: number): any[][] => {
  * Creates an array of numbers from a specified range.
  * @param {number} start
  * @param {number} end
+ * @example
+ * range(0, 5); // [0, 1, 2, 3, 4, 5]
  */
 export const range = (start: number, end: number): number[] => {
   return Array(end - start + 1)
@@ -42,8 +42,7 @@ export const range = (start: number, end: number): number[] => {
  * @param {any[]} arr
  * @param {any} separator
  * @example
- * const x = splitByValue([1, 2, 3, 4, "x", 5, 6, 7, 8], "x");
- * console.log(x); // [[1, 2, 3, 4], [1, 2, 3, 4]]
+ * splitByValue([1, 2, 3, 4, "x", 5, 6, 7, 8], "x"); // [[1, 2, 3, 4], [1, 2, 3, 4]]
  */
 export const splitByValue = (arr: any[], separator: any): any[][] => {
   const result = [[]];
@@ -56,12 +55,16 @@ export const splitByValue = (arr: any[], separator: any): any[][] => {
 /**
  * Sums an unspecified amount of inputs.
  * @param {...number} args
+ * @example
+ * sum(1, 2, 3); // 6
  */
 export const sum = (...args: number[]) => args.reduce((a, b) => a + b);
 
 /**
  * Multiplies an unspecified amount of inputs.
  * @param {...number} args
+ * @example
+ * product(1, 2, 3); // 6
  */
 export const product = (...args: number[]): number =>
   args.reduce((a, b) => a * b);
@@ -71,6 +74,8 @@ export const product = (...args: number[]): number =>
  * @see {@link https://docs.python.org/3.3/reference/expressions.html#binary-arithmetic-operations}
  * @param {number} a
  * @param {number} b
+ * @example
+ * mod(-2, 20); // 18
  */
 export const mod = (a: number, b: number): number => ((a % b) + b) % b;
 
@@ -79,6 +84,35 @@ export const mod = (a: number, b: number): number => ((a % b) + b) % b;
  * @param {T[]} array
  * @param {string} property
  * @return {IDictionary<T[]>} A dictionary with the key being the property and the value being the objects grouped by the provided property.
+ * @example
+ * const x = [{
+ *   name: "Ivan",
+ *   company: "Google"
+ * },
+ * {
+ *   name: "Kenny",
+ *   company: "Google"
+ * },
+ * {
+ *   name: "Joseph",
+ *   company: "Amazon"
+ * }];
+ *groupBy(x, "company");
+ *
+ * {
+ *   "Google": [{
+ *     "name": "Ivan",
+ *     "company": "Google"
+ *   },
+ *   {
+ *     "name": "Kenny",
+ *     "company": "Google"
+ *   }],
+ *   "Amazon": [{
+ *     "name": "Joseph",
+ *     "company": "Amazon"
+ *   }]
+ * }
  */
 export const groupBy = <T>(array: T[], property: string): IDictionary<T[]> => {
   return array.reduce((memo, x) => {
@@ -92,6 +126,8 @@ export const groupBy = <T>(array: T[], property: string): IDictionary<T[]> => {
  * Repeats a function a set amount of times.
  * @param {number} n
  * @param {function} fn
+ * @example
+ * repeat(3, () => console.log("x")); // xxx
  */
 export const repeat = (n: number, fn: () => void): void => {
   Array(n)
@@ -117,6 +153,8 @@ export const cloneObject = (obj: any) => {
  * Creates an array of a certain length filled with a specified value.
  * @param {number} length
  * @param {any} value
+ * @example
+ * generateArray(3, []); // [[], [], []]
  */
 export const generateArray = (length: number, value: any): any[] => {
   return JSON.parse(JSON.stringify(Array.from({ length }, () => value)));
@@ -126,6 +164,8 @@ export const generateArray = (length: number, value: any): any[] => {
  * Returns the last `N` elements of an array. If 1 is specified, it returns only the last element.
  * @param {any[]} arr
  * @param {number} n
+ * @example
+ * end(2, [1, 2, 3]); // [2, 3]
  */
 export const end = (arr: any[], n: number): any | any[] => {
   const slice = arr.slice(arr.length - n);
@@ -175,6 +215,8 @@ export const dateDiffReadable = (from: Date, to: Date): string => {
  * Gets a random integer between an inclusive range.
  * @param {number} min
  * @param {number} max
+ * @example
+ * randInt(1, 20); // 18
  */
 export const randInt = (min: number, max: number) => {
   min = Math.ceil(min);
@@ -185,14 +227,16 @@ export const randInt = (min: number, max: number) => {
 /**
  * Gets a random element of an array.
  * @param {any[]} arr
+ * @example
+ * sample([1, 2, 3]); // 2
  */
-export const sample = (arr: any[]): any => {
-  return arr[randInt(0, arr.length - 1)];
-};
+export const sample = (arr: any[]): any => arr[randInt(0, arr.length - 1)];
 
 /**
- * Generates a string composed of `N` random characters.
+ * Generates a string composed of `n` random characters.
  * @param {number} n
+ * @example
+ * generateRandomString(5); // "AXRF0"
  */
 export const generateRandomString = (n: number): string => {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -206,6 +250,10 @@ export const generateRandomString = (n: number): string => {
  * @see https://docs.python.org/3.3/library/functions.html#zip
  * @param {any[]} a
  * @param {any[]} b
+ * @example
+ * const a = [1, 2, 3];
+ * const b = ["a", "b", "c"];
+ * zip(a, b); // [[1, "a"], [2, "b"], [3, "c"]]
  */
 export const zip = (a: any[], b: any[]): any[][] => {
   const res = [];
@@ -219,6 +267,8 @@ export const zip = (a: any[], b: any[]): any[][] => {
  * Gets an array that contains the elements that are present in the array `a`, but not in the array `b`.
  * @param {any[]} a
  * @param {any[]} b
+ * @example
+ * difference([1, 2, 3], [2, 3, 4]); // [1]
  */
 export const difference = (a: any[], b: any[]): any[] =>
   [...a].filter((x) => [...b].indexOf(x) < 0);

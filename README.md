@@ -15,26 +15,222 @@ $ npm i matija-utils
 
 ### Array functions
 
-| Name          | Description                                                                                           |
-| ------------- | ----------------------------------------------------------------------------------------------------- |
-| intersect     | Finds the common elements of two arrays.                                                              |
-| chunk         | Chunks an array into a new array consisting of smaller arrays of a specified size.                    |
-| range         | Creates an array of numbers from a specified range.                                                   |
-| splitByValue  | Splits and clumps together an array of elements by using a separator.                                 |
-| groupBy       | Groups values in an array of objects by the provided property.                                        |
-| repeat        | Repeats a function a set amount of times.                                                             |
-| generateArray | Creates an array of a certain length filled with a specified value.                                   |
-| end           | Returns the last `N` elements of an array. If 1 is specified, it returns only the last element.       |
-| sample        | Gets a random element of an array.                                                                    |
-| zip           | Combines two arrays into one, similar to the Python `zip` function.                                   |
-| difference    | Gets an array that contains the elements that are present in the array `a`, but not in the array `b`. |
+<table>
+<tr>
+<td> Name </td> <td> Description </td> <td> Example </td>
+</tr>
+<tr>
+<tr>
+<td> intersect </td>
+<td> Finds the common elements of two arrays. </td>
+<td>
+
+```javascript
+intersect([1, 2, 3], [1, 2]); // [1, 2]
+```
+
+</td>
+</tr>
+<tr>
+<td> chunk </td>
+<td> Chunks an array into a new array consisting of smaller arrays of a specified size. </td>
+<td>
+
+```javascript
+chunk([1, 2, 3, 4, 5, 6], 2); // [[1, 2], [3, 4], [5, 6]]
+```
+
+</td>
+</tr>
+<tr>
+<td> range </td>
+<td> Creates an array of numbers from a specified range. </td>
+<td>
+
+```javascript
+range(0, 5); // [0, 1, 2, 3, 4, 5]
+```
+
+</td>
+</tr>
+<tr>
+<td> splitByValue </td>
+<td> Splits and clumps together an array of elements by using a separator. </td>
+<td>
+
+```javascript
+splitByValue([1, 2, 3, 4, "x", 5, 6, 7, 8], "x"); // [[1, 2, 3, 4], [1, 2, 3, 4]]
+```
+
+</td>
+</tr>
+<tr>
+<td> groupBy </td>
+<td> Groups values in an array of objects by the provided property. </td>
+<td>
+
+```javascript
+const x = [{
+  name: "Ivan",
+  company: "Google"
+}, {
+  name: "Kenny",
+  company: "Google"
+}, {
+  name: "Joseph",
+  company: "Amazon"
+}];
+groupBy(x, "company");
+
+{
+  "Google": [{
+    "name": "Ivan",
+    "company": "Google"
+   },
+   {
+    "name": "Kenny",
+    "company": "Google"
+  }],
+  "Amazon": [{
+    "name": "Joseph",
+    "company": "Amazon"
+  }]
+}
+
+```
+
+</td>
+</tr>
+<tr>
+<td> repeat </td>
+<td> Repeats a function a set amount of times. </td>
+<td>
+
+```javascript
+repeat(3, () => console.log("x")); // xxx
+```
+
+</td>
+</tr>
+<tr>
+<td> generateArray </td>
+<td> Creates an array of a certain length filled with a specified value. </td>
+<td>
+
+```javascript
+generateArray(3, []); // [[], [], []]
+```
+
+</td>
+</tr>
+<tr>
+<td> end </td>
+<td> Returns the last N elements of an array. If 1 is specified, it returns only the last element. </td>
+<td>
+
+```javascript
+end(2, [1, 2, 3]); // [2, 3]
+```
+
+</td>
+</tr>
+<tr>
+<td> sample </td>
+<td> Gets a random element of an array. </td>
+<td>
+
+```javascript
+sample([1, 2, 3]); // 2
+```
+
+</td>
+</tr>
+<tr>
+<td> zip </td>
+<td> Combines two arrays into one, similar to the Python zip function. </td>
+<td>
+
+```javascript
+const a = [1, 2, 3];
+const b = ["a", "b", "c"];
+zip(a, b); // [[1, "a"], [2, "b"], [3, "c"]]
+```
+
+</td>
+</tr>
+<tr>
+<td> difference </td>
+<td> Gets an array that contains the elements that are present in the array a, but not in the array b. </td>
+<td>
+
+```javascript
+difference([1, 2, 3], [2, 3, 4]); // [1]
+```
+
+</td>
+</tr>
+</table>
 
 ### Other functions
 
-| Name                 | Description                                           |
-| -------------------- | ----------------------------------------------------- |
-| sum                  | Sums an unspecified amount of inputs.                 |
-| product              | Multiplies an unspecified amount of inputs.           |
-| mod                  | Performs a modulo operation akin to that of Python.   |
-| randInt              | Gets a random integer between an inclusive range.     |
-| generateRandomString | Generates a string composed of `N` random characters. |
+<table>
+<tr>
+<td> Name </td> <td> Description </td> <td> Example </td>
+</tr>
+<tr>
+<tr>
+<td> sum </td>
+<td> Sums an unspecified amount of inputs. </td>
+<td>
+
+```javascript
+sum(1, 2, 3); // 6
+```
+
+</td>
+</tr>
+<tr>
+<td> product </td>
+<td> Multiplies an unspecified amount of inputs. </td>
+<td>
+
+```javascript
+product(1, 2, 3); // 6
+```
+
+</td>
+</tr>
+<tr>
+<td> mod </td>
+<td> Performs a modulo operation akin to that of Python. </td>
+<td>
+
+```javascript
+mod(-2, 20); // 18
+```
+
+</td>
+</tr>
+<tr>
+<td> randInt </td>
+<td> Gets a random integer between an inclusive range. </td>
+<td>
+
+```javascript
+randInt(1, 20); // 18
+```
+
+</td>
+</tr>
+<tr>
+<td> generateRandomString </td>
+<td> Generates a string composed of n random characters. </td>
+<td>
+
+```javascript
+generateRandomString(5); // "AXRF0"
+```
+
+</td>
+</tr>
+</table>
