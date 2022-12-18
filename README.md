@@ -169,6 +169,17 @@ difference([1, 2, 3], [2, 3, 4]); // [1]
 
 </td>
 </tr>
+<tr>
+<td> count </td>
+<td> Gets the number of elements in an array that conform to the given condition. </td>
+<td>
+
+```javascript
+count([1, 2, 3], (x) => x > 2); // 1
+```
+
+</td>
+</tr>
 </table>
 
 ### Other functions

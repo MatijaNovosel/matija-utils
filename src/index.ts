@@ -272,3 +272,13 @@ export const zip = (a: any[], b: any[]): any[][] => {
  */
 export const difference = (a: any[], b: any[]): any[] =>
   [...a].filter((x) => [...b].indexOf(x) < 0);
+
+/**
+ * Gets the number of elements in an array that conform to the given condition.
+ * @param {any[]} arr
+ * @param {Function} condition
+ * @example
+ * count([1, 2, 3], (x) => x > 2); // 1
+ */
+export const count = (arr: any[], condition: (e: any) => boolean) =>
+  arr.filter(condition).length;
