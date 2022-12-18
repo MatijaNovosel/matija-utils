@@ -1,3 +1,4 @@
+import { SI_SYMBOL } from "./constants";
 import { IDictionary } from "./models";
 
 /**
@@ -282,3 +283,30 @@ export const difference = (a: any[], b: any[]): any[] =>
  */
 export const count = (arr: any[], condition: (e: any) => boolean) =>
   arr.filter(condition).length;
+
+/**
+ * Abbreviates large numbers with SI symbols.
+ * @param {number} val
+ * @example
+ * abbreviateNumber(14568); // "14.6k"
+ */
+export const abbreviateNumber = (val: number): string => {
+  const tier = (Math.log10(Math.abs(val)) / 3) | 0;
+  if (tier === 0) return val.toString();
+  const suffix = SI_SYMBOL[tier];
+  const scale = Math.pow(10, tier * 3);
+  const scaled = val / scale;
+  return scaled.toFixed(1) + suffix;
+};
+
+/**
+ * Creates an acronym of a given string.
+ * @param {string} txt
+ * @example
+ * acronym("Sir Isaac Newton"); // "SIN"
+ */
+export const acronym = (txt: string) =>
+  txt
+    .split(" ")
+    .map((item) => item[0])
+    .join("");

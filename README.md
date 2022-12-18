@@ -244,4 +244,26 @@ generateRandomString(5); // "AXRF0"
 
 </td>
 </tr>
+<tr>
+<td> abbreviateNumber </td>
+<td> Abbreviates large numbers with SI symbols. </td>
+<td>
+
+```javascript
+abbreviateNumber(14568); // "14.6k"
+```
+
+</td>
+</tr>
+<tr>
+<td> acronym </td>
+<td> Creates an acronym of a given string. </td>
+<td>
+
+```javascript
+acronym("Sir Isaac Newton"); // "SIN"
+```
+
+</td>
+</tr>
 </table>
