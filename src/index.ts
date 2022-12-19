@@ -310,3 +310,12 @@ export const acronym = (txt: string) =>
     .split(" ")
     .map((item) => item[0])
     .join("");
+
+/**
+ * Finds the common elements of two arrays.
+ * @param {any[]} a
+ * @param {any[]} b
+ * @example
+ * common([1, 2, 3], [2, 3, 4]); // [2, 3]
+ */
+export const common = (a: any[], b: any[]) => a.filter((e) => b.includes(e));

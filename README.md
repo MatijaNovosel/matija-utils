@@ -180,6 +180,17 @@ count([1, 2, 3], (x) => x > 2); // 1
 
 </td>
 </tr>
+<tr>
+<td> common </td>
+<td> Finds the common elements of two arrays. </td>
+<td>
+
+```javascript
+common([1, 2, 3], [2, 3, 4]); // [2, 3]
+```
+
+</td>
+</tr>
 </table>
 
 ### Other functions
