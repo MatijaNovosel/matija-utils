@@ -277,4 +277,38 @@ acronym("Sir Isaac Newton"); // "SIN"
 
 </td>
 </tr>
+<tr>
+<td> randomColorHex </td>
+<td> Creates a random hex color value. </td>
+<td>
+
+```javascript
+randomColorHex(); // "#2a30fd"
+```
+
+</td>
+</tr>
+<tr>
+<td> textEllipsis </td>
+<td> Cuts a text off at a certain length, ending it with three dots. </td>
+<td>
+
+```javascript
+textEllipsis("hello", 3); // "hel..."
+```
+
+</td>
+</tr>
+<tr>
+<td> shadeColor </td>
+<td> Lightens or darkens a hex color value by a certain percentage, negatives values for darker and positive ones for lighter tones. </td>
+<td>
+
+```javascript
+shadeColor("#c72c2c", -40); // "#771a1a"
+shadeColor("#c72c2c", 40); // "#ff3d3d"
+```
+
+</td>
+</tr>
 </table>

@@ -319,3 +319,59 @@ export const acronym = (txt: string) =>
  * common([1, 2, 3], [2, 3, 4]); // [2, 3]
  */
 export const common = (a: any[], b: any[]) => a.filter((e) => b.includes(e));
+
+/*
+ * Creates a random hex color value.
+ * @example
+ * randomColorHex(); // "#2a30fd"
+ */
+export const randomColorHex = (): string =>
+  "#000000".replace(/0/g, () => (~~(Math.random() * 16)).toString(16));
+
+/**
+ * Cuts a text off at a certain length, ending it with three dots.
+ * @param {string} text
+ * @param {number} length
+ * @example
+ * textEllipsis("hello", 3); // "hel..."
+ */
+export const textEllipsis = (
+  text: string | null | undefined,
+  length: number
+): string => {
+  if (text) {
+    if (text.length <= length) return text;
+    return `${text.substring(0, length)}...`;
+  }
+  return "";
+};
+
+/**
+ * Lightens or darkens a hex color value by a certain percentage, negatives values for darker and positive ones for lighter tones.
+ * @param {string} color
+ * @param {number} percent
+ * @example
+ * shadeColor("#c72c2c", -40); // "#771a1a"
+ * shadeColor("#c72c2c", 40); // "#ff3d3d"
+ */
+export function shadeColor(color: string | undefined, percent: number): string {
+  if (color) {
+    let R = parseInt(color.substring(1, 3), 16);
+    let G = parseInt(color.substring(3, 5), 16);
+    let B = parseInt(color.substring(5, 7), 16);
+    R = parseInt(((R * (100 + percent)) / 100).toString());
+    G = parseInt(((G * (100 + percent)) / 100).toString());
+    B = parseInt(((B * (100 + percent)) / 100).toString());
+    R = R < 255 ? R : 255;
+    G = G < 255 ? G : 255;
+    B = B < 255 ? B : 255;
+    const RR =
+      R.toString(16).length == 1 ? "0" + R.toString(16) : R.toString(16);
+    const GG =
+      G.toString(16).length == 1 ? "0" + G.toString(16) : G.toString(16);
+    const BB =
+      B.toString(16).length == 1 ? "0" + B.toString(16) : B.toString(16);
+    return "#" + RR + GG + BB;
+  }
+  return "#000000";
+}
