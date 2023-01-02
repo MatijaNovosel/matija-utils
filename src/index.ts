@@ -43,7 +43,7 @@ export const range = (start: number, end: number): number[] => {
  * @param {any[]} arr
  * @param {any} separator
  * @example
- * splitByValue([1, 2, 3, 4, "x", 5, 6, 7, 8], "x"); // [[1, 2, 3, 4], [1, 2, 3, 4]]
+ * splitByValue([1, 2, 3, 4, "x", 5, 6, 7, 8], "x"); // [[1, 2, 3, 4], [5, 6, 7, 8]]
  */
 export const splitByValue = (arr: any[], separator: any): any[][] => {
   const result = [[]];
