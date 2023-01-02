@@ -18,3 +18,4 @@ Check out the documentation [here](https://matija-utils-docs.vercel.app/).
 
 - Small package size
 - A multitude of useful utilities
+- Fully documented and typed
