@@ -11,6 +11,8 @@ Install with [npm](https://www.npmjs.com/)
 $ npm i matija-utils
 ```
 
+Check out the documentation [here](https://matija-utils-docs.vercel.app/).
+
 ## 🚀 Features (work in progress)
 
 ### Array functions
