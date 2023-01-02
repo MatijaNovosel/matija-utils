@@ -14,6 +14,18 @@ $ npm i matija-utils
 
 Check out the documentation [here](https://matija-utils-docs.vercel.app/).
 
+Import the functions you need:
+
+```typescript
+import { range } from "matija-utils";
+
+for (const n of range(0, 5)) {
+  console.log(n);
+}
+```
+
+And that's all there is to it!
+
 ## 🚀 Features 
 
 - Small package size
