@@ -5,9 +5,10 @@
 <h1 align=center>matija-utils</h1>
 <p align=center>My opinionated list of JavaScript utilities.</p>
 
-Install with [npm](https://www.npmjs.com/)
+Install with your package manager of choice:
 
 ```sh
+$ yarn add matija-utils
 $ npm i matija-utils
 ```
 
