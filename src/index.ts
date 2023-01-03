@@ -375,3 +375,19 @@ export function shadeColor(color: string | undefined, percent: number): string {
   }
   return "#000000";
 }
+
+/**
+ * Purges the provided array of falsy values.
+ * @param {any[]} arr
+ * @example
+ * onlyTruthy([1, 2, 3, false, undefined, 4]); // [1, 2, 3, 4]
+ */
+const onlyTruthy = (arr: any[]) => arr.filter((e) => !!e);
+
+/**
+ * Purges the provided array of truthy values.
+ * @param {any[]} arr
+ * @example
+ * onlyFalsy([1, 2, 3, false, undefined, 4]); // [false, undefined]
+ */
+const onlyFalsy = (arr: any[]) => arr.filter((e) => !!!e);
