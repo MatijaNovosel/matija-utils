@@ -382,7 +382,7 @@ export function shadeColor(color: string | undefined, percent: number): string {
  * @example
  * onlyTruthy([1, 2, 3, false, undefined, 4]); // [1, 2, 3, 4]
  */
-const onlyTruthy = (arr: any[]) => arr.filter((e) => !!e);
+export const onlyTruthy = (arr: any[]) => arr.filter((e) => !!e);
 
 /**
  * Purges the provided array of truthy values.
@@ -390,4 +390,20 @@ const onlyTruthy = (arr: any[]) => arr.filter((e) => !!e);
  * @example
  * onlyFalsy([1, 2, 3, false, undefined, 4]); // [false, undefined]
  */
-const onlyFalsy = (arr: any[]) => arr.filter((e) => !!!e);
+export const onlyFalsy = (arr: any[]) => arr.filter((e) => !!!e);
+
+/**
+ * Calculates the difference of an unspecified amount of inputs.
+ * @param {...number} args
+ * @example
+ * diff(1, 2, 3); // -4
+ */
+export const diff = (...args: number[]) => args.reduce((a, b) => a - b);
+
+/**
+ * Divides an unspecified amount of inputs.
+ * @param {...number} args
+ * @example
+ * div(1, 2, 3); // 0.1666666666666667
+ */
+export const div = (...args: number[]) => args.reduce((a, b) => a / b);
